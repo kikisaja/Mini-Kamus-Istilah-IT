@@ -1,0 +1,137 @@
+:root {
+    --bg-light: #f8fafc;
+    --panel-bg: #ffffff;
+    --text-dark: #1e293b;
+    --stroke-dark: #1e293b;
+    --pop-green: #06d6a0;
+    --pop-yellow: #ffb703;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.kamus-container {
+    background-color: var(--panel-bg);
+    padding: 35px 25px;
+    border-radius: 24px;
+    border: 3px solid var(--stroke-dark);
+    box-shadow: 6px 6px 0px var(--stroke-dark);
+    max-width: 500px;
+    width: 100%;
+}
+
+.kamus-header h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.kamus-header p {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+/* Kotak Pencarian Pop Art */
+.search-box {
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 3px solid var(--stroke-dark);
+    border-radius: 14px;
+    outline: none;
+    background-color: #fafafa;
+    box-shadow: 4px 4px 0px var(--stroke-dark);
+    transition: all 0.15s ease;
+}
+
+.search-box input:focus {
+    background-color: #ffffff;
+    border-color: var(--pop-yellow);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--stroke-dark);
+}
+
+/* Area Hasil Kamus */
+.kamus-list {
+    max-height: 350px;
+    overflow-y: auto; /* Memunculkan scrollbar jika data penuh */
+    padding-right: 5px;
+    text-align: left;
+}
+
+/* Kartu Istilah */
+.kamus-item {
+    background-color: #f8fafc;
+    border: 2px solid var(--stroke-dark);
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 15px;
+    box-shadow: 3px 3px 0px var(--stroke-dark);
+    animation: popIn 0.2s ease-out;
+}
+
+.kamus-item:last-child {
+    margin-bottom: 0;
+}
+
+.kamus-title {
+    display: inline-block;
+    font-size: 1.15rem;
+    font-weight: 800;
+    background-color: var(--pop-green);
+    padding: 2px 8px;
+    border: 2px solid var(--stroke-dark);
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.kamus-def {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #334155;
+    line-height: 1.4;
+}
+
+/* Notifikasi Jika Data Tidak Ditemukan */
+.not-found {
+    text-align: center;
+    color: #64748b;
+    font-weight: 600;
+    font-style: italic;
+    padding: 20px 0;
+}
+
+/* Kustomisasi Tampilan Scrollbar */
+.kamus-list::-webkit-scrollbar {
+    width: 8px;
+}
+.kamus-list::-webkit-scrollbar-thumb {
+    background-color: var(--stroke-dark);
+    border-radius: 4px;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.95); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
